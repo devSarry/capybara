@@ -1,14 +1,6 @@
 capybara
 ========
 
-.. image:: https://img.shields.io/pypi/v/capybara.svg
-    :target: https://pypi.python.org/pypi/capybara
-    :alt: Latest PyPI version
-
-.. image:: https://travis-ci.org/dopyoman/ad.png
-   :target: https://travis-ci.org/dopyoman/ad
-   :alt: Latest Travis CI build status
-
 Building Energy IoT Client
 
 Usage
@@ -71,7 +63,7 @@ mkvirtualenv --python=/usr/bin/python3 capybara --always-copy
 
 
 ```
-workon andersChallenge
+workon capybara
 ```
 
 Starting the project
@@ -85,7 +77,7 @@ pip install -r requirements.txt #or pip install --upgrade -r requirements.txt
 
 
 Requirements
-^^^^^^^^^^^^
+-------------
 
 Compatibility
 -------------
