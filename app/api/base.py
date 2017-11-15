@@ -3,7 +3,7 @@ from config.config import Config
 
 
 class ApiBase(object):
-    _base_url = 'http://sensor.app/api/'
+    _base_url = 'http://sensor.makkaraperuna.com/api/'
     _api_version = 'v1'
     _jwt_token = ''
     _id = ''
