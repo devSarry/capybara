@@ -9,7 +9,7 @@ setuptools.setup(
     author_email="jonathan.sarry@edu.turkuamk.fi",
 
     description="Building Energy IoT Client",
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
 
     packages=setuptools.find_packages(),
 
