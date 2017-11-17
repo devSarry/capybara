@@ -28,6 +28,8 @@ class Auth(IAuth, ApiBase):
     _base_auth_url = 'auth/device/'
 
     def __init__(self):
+        self._jwt_token = ''
+        self._id = ''
         pass
 
     def register(self, device_name=None, device_password=None, token=None):
@@ -64,10 +66,16 @@ class Auth(IAuth, ApiBase):
 
         return device_exists
 
+    @property
+    def id(self):
+        return self._id
+
+    @property
+    def jwt_token(self):
+        return self._jwt_token
 
 
-
-# reg = Auth()
+            # reg = Auth()
 # device = Device()
 # d_name = device.generate_name()
 # d_pass = device.generate_password(20)

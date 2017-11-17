@@ -43,10 +43,3 @@ class ApiBase(object):
             print('Request failed: {}'.format(e))
             raise
 
-    @property
-    def id(self):
-        return self._id
-
-    @property
-    def jwt_token(self):
-        return self._jwt_token
