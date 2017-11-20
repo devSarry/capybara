@@ -57,7 +57,7 @@ class Auth(IAuth, ApiBase):
         # TODO save device id for later
 
     def is_registered(self, device_name):
-        check_url = '/check'
+        check_url = self._base_auth_url + 'check'
         payload = {'device_name': device_name}
         r = self.post(check_url, payload)
         device_exists = r['device']
