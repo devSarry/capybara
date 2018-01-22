@@ -1,0 +1,51 @@
+{
+	"name": "addGitrepo",
+	"text": "Add Git repo for RPI \\nGit link: %1\\nGit's folder: %2\\nUser.Email: %3\\nUser.Name: %4\\nGit's User Name: %5\\nGit'passwd: %6\\nUser: %7",
+	"script": "addGitrepo.py",
+    "args": [
+        {
+            "type": "text",
+            "default": "Github link git://your-git.git",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "Folder's name in Git",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "User.Email to connect to Git",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "User.Name to connect to Git",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "Git's user name",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "Git's passwd",
+            "maxLength": 0
+        },
+        {
+			"type": "menu",
+			"options": ["pi", "root"]
+		}
+    ],
+	"network": true,
+	"continue": true,
+	"type": "setting",
+	"category":"setting",
+	"supportedOperatingSystems": [
+		"raspbian-pibakery.img",
+		"raspbian-lite-pibakery.img"
+	],
+	"shortDescription":"Add Git repo.",
+	"longDescription":"Enter the Git repo and Folder's name on Git to sync, send or transfer the information from RPI without keyboard,screen"
+}
