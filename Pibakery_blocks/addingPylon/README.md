@@ -21,7 +21,7 @@ Files for configuring the sensor addresses - for building energy project
 	- readingTemp shall export the reading value to files which named readingData_{}
 
 ## Using addingPylon
-	- Enter the Pylong_ID (this could be any 1,2...n) 
+	- Enter the Pylon_ID (this could be any 1,2...n) 
 	- Enter the address of each sensor in order from deepest.
 	- To expand for more sensors, need to add more input arguments in json file and redefine number in for loop in addingPylon.py (line 33)
 
