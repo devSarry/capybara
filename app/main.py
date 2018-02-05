@@ -5,6 +5,8 @@ import time, sys
 
 from api.auth import Auth
 from device.device import Device
+from random import randint
+from w1thermsensor import W1ThermSensor
 
 device = Device()
 
@@ -14,6 +16,7 @@ READINGS_URL = ''
 
 
 def client_init():
+    sensor = W1ThermSensor()
     reg = Auth()
     try:
         if not NAME:
@@ -37,13 +40,16 @@ def main():
     #     client.post(READINGS_URL, json=payload)
     #     time.sleep(10)
     READINGS_URL = 'device/{}/readings?token={}'.format(client.id, client.jwt_token)
+
     temp_v = 10
+    readings_from_sensors = []
     while True:
-        reading = json.dumps({'temp_senors': {'t_1': temp_v, 't_2': temp_v + 12}, "pylon": "a_1"})
-        payload = {'reading': reading}
+        for sensor in W1ThermSensor.get_available_sensors():
+            readings_from_sensors.append({'uuid': sensor.id + '_0', 'value': sensor.get_temperature()})
+
+        payload = {'reading': json.dumps({'sensors': readings_from_sensors})}
         client.post(READINGS_URL, payload)
         time.sleep(10)
-        temp_v += 1
 
 
 if __name__ == '__main__':

@@ -42,8 +42,6 @@ class Auth(IAuth, ApiBase):
             if r['token']:
                 self._jwt_token = r['token']
                 self._id = r['device']['id']
-
-            return r
         else:
             return False
 

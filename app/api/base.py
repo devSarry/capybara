@@ -24,7 +24,7 @@ class ApiBase(object):
 
         try:
             if json:
-                r = requests.post(endpoint_url,json=json)
+                r = requests.post(endpoint_url, json=json)
             else:
                 r = requests.post(endpoint_url, data=payload)
             r.raise_for_status()

@@ -1,1 +1,4 @@
-PyYAML
+pyyaml
+requests
+awesome-codename
+w1thermsensor
