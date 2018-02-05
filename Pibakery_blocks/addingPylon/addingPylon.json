@@ -1,0 +1,57 @@
+{
+	"name": "addingPylon",
+	"text": "Adding Pylon for RPI \\nPylon_ID: %1\\nSensorAdd_1: %2\\nSensorAdd_2: %3\\nSensorAdd_3: %4\\nSensorAdd_4: %5\\nSensorAdd_5: %6\\nSensorAdd_6: %7\\nSensorAdd_7: %8",
+	"script": "addingPylon.py",
+    "args": [
+        {
+            "type": "text",
+            "default": "Pylon_ID",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "SensorAdd_1",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "SensorAdd_2",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "SensorAdd_3",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "SensorAdd_4",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "SensorAdd_5",
+            "maxLength": 0
+        },
+        {
+            "type": "text",
+            "default": "SensorAdd_6",
+            "maxLength": 0
+        },
+        {
+			"type": "text",
+            "default": "SensorAdd_7",
+            "maxLength": 0
+		}
+    ],
+	"network": true,
+	"continue": true,
+	"type": "setting",
+	"category":"setting",
+	"supportedOperatingSystems": [
+		"raspbian-pibakery.img",
+		"raspbian-lite-pibakery.img"
+	],
+	"shortDescription":"Add Git repo.",
+	"longDescription":"Enter the Pylon_ID  and Sensor_IDs to export the temparature value in Json format. (Pylong_ID can be 1,2...or anything, Sensor_ID must be the address of sensor)"
+}
