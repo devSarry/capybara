@@ -34,14 +34,21 @@ class Auth(IAuth, ApiBase):
 
     def register(self, device_name=None, device_password=None, token=None):
         if not self.is_registered(device_name):
+            login_url = self._base_auth_url + 'login'
             signup_url = self._base_auth_url + 'signup'
             payload = {'name': device_name, 'password': device_password, 'secret_client_token': token}
 
             r = self.post(signup_url, payload)
-            print(r['token'])
-            if r['token']:
-                self._jwt_token = r['token']
-                self._id = r['device']['id']
+
+            payload_2 = {"device_name": device_name, "password": device_password}
+            v = self.post(login_url, payload_2)
+            print(v['token'])
+            if v['token']:
+                self._jwt_token = v['token']
+                self._id = v['device']['id']
+            else:
+                print('error while signing up')
+
         else:
             return False
 
