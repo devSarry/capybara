@@ -42,15 +42,12 @@ class Auth(IAuth, ApiBase):
             #Checking if signing up is successful
             if r['status'] == 'ok':
                 print('siginging up successful and logging...\n')
-                #instace an object to call its function to get token and device_id
-                emx = Auth()
-                emx.login(device_name, device_password)
-                print(emx._jwt_token + '\n')
+                #Call login function to get token and device_id
+                self.login(device_name, device_password)
+                print(self._jwt_token + '\n')
 
                 #if token key is gotten from logging then assign, otherwise error
-                if emx._jwt_token:
-                    self._jwt_token = emx._jwt_token
-                    self._id = emx._id
+                if self._jwt_token:
                     print('logging successful...\n')
                 else:
                     print('error while logging\n')
