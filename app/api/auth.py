@@ -38,10 +38,22 @@ class Auth(IAuth, ApiBase):
             payload = {'name': device_name, 'password': device_password, 'secret_client_token': token}
 
             r = self.post(signup_url, payload)
-            print(r['token'])
-            if r['token']:
-                self._jwt_token = r['token']
-                self._id = r['device']['id']
+
+            #Checking if signing up is successful
+            if r['status'] == 'ok':
+                print('siginging up successful and logging...\n')
+                #Call login function to get token and device_id
+                self.login(device_name, device_password)
+                print(self._jwt_token + '\n')
+
+                #if token key is gotten from logging then assign, otherwise error
+                if self._jwt_token:
+                    print('logging successful...\n')
+                else:
+                    print('error while logging\n')
+            else:
+                print('error while signing up\n')
+
         else:
             return False
 

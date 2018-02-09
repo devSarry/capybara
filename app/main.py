@@ -41,11 +41,10 @@ def main():
     #     time.sleep(10)
     READINGS_URL = 'device/{}/readings?token={}'.format(client.id, client.jwt_token)
 
-    temp_v = 10
-    readings_from_sensors = []
     while True:
+        readings_from_sensors = []
         for sensor in W1ThermSensor.get_available_sensors():
-            readings_from_sensors.append({'uuid': sensor.id + '_0', 'value': sensor.get_temperature()})
+            readings_from_sensors.append({'uuid': sensor.id , 'value': sensor.get_temperature()})
 
         payload = {'reading': json.dumps({'sensors': readings_from_sensors})}
         client.post(READINGS_URL, payload)
@@ -57,6 +56,6 @@ if __name__ == '__main__':
 
     print("\nPython %s" % sys.version)
     print("IoT Client for Python")
-
+    print("Device: {}".format(client.id))
     print("Starting to send readings...")
     main()
