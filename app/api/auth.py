@@ -59,7 +59,7 @@ class Auth(IAuth, ApiBase):
 
     def login(self, device_name, password):
         login_url = self._base_auth_url + 'login'
-        data = {"device_name": device_name, "password": password}
+        data = {"name": device_name, "password": password}
 
         r = self.post(login_url, data)
 
@@ -70,7 +70,7 @@ class Auth(IAuth, ApiBase):
 
     def is_registered(self, device_name):
         check_url = self._base_auth_url + 'check'
-        payload = {'device_name': device_name}
+        payload = {'name': device_name}
         r = self.post(check_url, payload)
         device_exists = r['device']
 
