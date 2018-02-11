@@ -37,7 +37,7 @@ def client_init():
 def refresh_token(token):
     refresh_url = "http://sensor.makkaraperuna.com/api/refresh"
     header_token = {'Authorization': 'Bearer ' + token}
-    r = requests.get(refresh_url, header_token)
+    r = requests.get(refresh_url, headers=header_token)
     v = r.headers['Authorization']
     #print(r.headers['Authorization'])
     #print new token key every time refreshing for debugging - take all string except 'Bearer ' (7 words)
