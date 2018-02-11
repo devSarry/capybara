@@ -6,16 +6,41 @@ import os.path
 import subprocess
 import time
 
-#Enable the GPIO pins to read 1-wire device
-if ( "dtoverlay=w1-gpio" and "dtoverlay=w1-gpio") in open("/boot/config.txt").read():
+#Enable all GPIO pins to read 1-wire device - all device's addresses will be stored in /sys/bus/w1
+if ( "dtoverlay=w1-gpio,gpiopin=2") in open("/boot/config.txt").read():
     print("existing")
 else:
-    appendtext = "dtoverlay=w1-gpio"
+    appendtext = """
+    dtoverlay=w1-gpio,gpiopin=2
+    dtoverlay=w1-gpio,gpiopin=3
+    dtoverlay=w1-gpio,gpiopin=4
+    dtoverlay=w1-gpio,gpiopin=5
+    dtoverlay=w1-gpio,gpiopin=6
+    dtoverlay=w1-gpio,gpiopin=7
+    dtoverlay=w1-gpio,gpiopin=8
+    dtoverlay=w1-gpio,gpiopin=9
+    dtoverlay=w1-gpio,gpiopin=10
+    dtoverlay=w1-gpio,gpiopin=11
+    dtoverlay=w1-gpio,gpiopin=12
+    dtoverlay=w1-gpio,gpiopin=13
+    dtoverlay=w1-gpio,gpiopin=16
+    dtoverlay=w1-gpio,gpiopin=17
+    dtoverlay=w1-gpio,gpiopin=18
+    dtoverlay=w1-gpio,gpiopin=19
+    dtoverlay=w1-gpio,gpiopin=20
+    dtoverlay=w1-gpio,gpiopin=21
+    dtoverlay=w1-gpio,gpiopin=22
+    dtoverlay=w1-gpio,gpiopin=23
+    dtoverlay=w1-gpio,gpiopin=24
+    dtoverlay=w1-gpio,gpiopin=25
+    dtoverlay=w1-gpio,gpiopin=26
+    dtoverlay=w1-gpio,gpiopin=27
+    """
     with open("/boot/config.txt", "a") as sudoFile:
         sudoFile.write(appendtext)
 
-os.system("sudo modprobe w1-gpio")
-os.system("sudo modprobe w1-therm")
+#os.system("sudo modprobe w1-gpio")
+#os.system("sudo modprobe w1-therm")
 os.system("sudo apt-get install -y python3")
 os.system("sudo apt-get install -y python3-pip")
 os.system("pip3 install w1thermsensor")
