@@ -6,7 +6,8 @@ import os.path
 import subprocess
 import time
 
-if "dtoverlay=w1-gpio" in open("/boot/config.txt").read():
+#Enable the GPIO pins to read 1-wire device
+if ( "dtoverlay=w1-gpio" and "dtoverlay=w1-gpio") in open("/boot/config.txt").read():
     print("existing")
 else:
     appendtext = "dtoverlay=w1-gpio"
