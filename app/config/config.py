@@ -5,7 +5,6 @@ _BASE_DIR_ = "/usr/local/lib/python3.5/"
 
 class Config:
     def __init__(self, config_path='config.yaml'):
-        stream = None
         #self._configFilePath = os.path.join(os.getcwd(), config_path)
         #checking whether python3.5 dir is existent
         if os.path.exists(_BASE_DIR_):
