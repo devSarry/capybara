@@ -1,0 +1,16 @@
+#Type:idle - systemd will delay execution of the service binary until all jobs are dispatched
+#Restart Capybara_App service always if the program is on-failure or terminated
+#multi-user.target - running on runlevel-3, start after the system is boot-up
+
+[Unit]
+Description=Embedded Capybara App to Systemd service
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /home/pi/newClone/capybara/app/main.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
