@@ -8,7 +8,7 @@ setup(
     packages=find_packages(),
     py_modules=['app', 'app.api', 'app.config', 'app.device', 'app.sensor_cable'],
 
-    #Include .config file in app dir
+    #Include .yaml file in app dir
     package_data={
         'app': ['*.yaml']
     },
