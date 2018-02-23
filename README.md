@@ -91,7 +91,7 @@ Authors
 Using capybara
 --------------------
 
-### Installing python App (capybara) into the system to have absolutely path.
+### Installing python App (capybara) into the system to have absolute path.
 
 * Going to the directory which you have cloned this project (.../capybara/), then:
 ```
