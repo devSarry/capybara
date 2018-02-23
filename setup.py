@@ -1,27 +1,25 @@
-import setuptools
+#!/usr/bin/env python
 
-setuptools.setup(
+from setuptools import setup, find_packages
+
+setup(
     name="capybara",
-    version="0.1.0",
-    url="https://github.com/dopyoman/capybara",
+    version="0.1",
+    packages=find_packages(),
+    py_modules=['app', 'app.api', 'app.config', 'app.device', 'app.sensor_cable'],
 
+    #Include .yaml file in app dir
+    package_data={
+        'app': ['*.yaml']
+    },
+
+    scripts=["app/main.py"],
+    #Information
     author="Jonathan srary",
     author_email="jonathan.sarry@edu.turkuamk.fi",
 
     description="Building Energy IoT Client",
     long_description=open('README.md').read(),
-
-    packages=setuptools.find_packages(),
-
-    install_requires=[],
-
-    classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-    ],
+    url="https://github.com/dopyoman/capybara",
 )
+
