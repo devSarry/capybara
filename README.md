@@ -119,6 +119,10 @@ sudo systemctl daemon-reload
 ```
 sudo service Capybara_App start
 ```
+* To show the status of service:
+```
+systemctl status Capybara_App.service
+```
 
 *Note*: the service will run continually, after the system is boot-up.
 
