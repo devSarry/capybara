@@ -88,10 +88,10 @@ Licence
 Authors
 -------
 
-### Using capybara
+Using capybara
+--------------------
 
-Installing python App (capybara) into the system to have absolutely path.
--------------------------------------------------------------------------
+### Installing python App (capybara) into the system to have absolutely path.
 
 * Going to the directory which you have cloned this project (.../capybara/), then:
 ```
@@ -103,8 +103,7 @@ sudo python3 setup.py install
 /usr/local/lib/python3.5/dist-packages/capybara...
 ```
 
-Installing unit file Capybara_App.service.
------------------------------------------------------------
+### Installing unit file Capybara_App.service.
 * You need to copy unit file Capybara_App.service into systemd/system. Example path:
 
 ```
