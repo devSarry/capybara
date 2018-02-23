@@ -124,6 +124,12 @@ sudo service Capybara_App start
 systemctl status Capybara_App.service
 ```
 
+* To show the systemd journal
+```
+Or: journalctl -xe 
+
+Or: journalctl -f 
+```
 *Note*: the service will run continually, after the system is boot-up.
 
 
