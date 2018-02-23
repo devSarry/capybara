@@ -13,6 +13,7 @@ setup(
         'app': ['*.yaml']
     },
 
+    scripts=["app/main.py"],
     #Information
     author="Jonathan srary",
     author_email="jonathan.sarry@edu.turkuamk.fi",
