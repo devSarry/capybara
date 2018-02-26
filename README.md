@@ -110,12 +110,17 @@ sudo python3 setup.py install
 /etc/systemd/system/
 ```
 
-* After copying unit file into /system, you need to reload all unit files to recongnize your new service:
+* After copying unit file into .../system, you need to give the permission to execute the unit file
+```
+sudo chmod 775 Capybara_App.service
+```
+
+* Then, you need reload all unit files to recongnize your new service:
 ```
 sudo systemctl daemon-reload
 ```
 
-* Then, you can start/stop the service:
+* After all, you can start/stop the service:
 ```
 sudo service Capybara_App start
 ```
