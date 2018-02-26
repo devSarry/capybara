@@ -73,7 +73,6 @@ class Auth(IAuth, ApiBase):
         payload = {'name': device_name}
         r = self.post(check_url, payload)
         device_exists = r['device']
-
         return device_exists
 
     @property

@@ -88,4 +88,54 @@ Licence
 Authors
 -------
 
+Using capybara
+--------------------
+
+### Installing python App (capybara) into the system to have absolute path.
+
+* Going to the directory which you have cloned this project (.../capybara/), then:
+```
+sudo python3 setup.py install
+```
+
+* Next you will see where the project is installed in. It should be in: 
+```
+/usr/local/lib/python3.5/dist-packages/capybara...
+```
+
+### Installing unit file Capybara_App.service.
+* You need to copy unit file Capybara_App.service into systemd/system. Example path:
+
+```
+/etc/systemd/system/
+```
+
+* After copying unit file into .../system, you need to give the permission to execute the unit file
+```
+sudo chmod 775 Capybara_App.service
+```
+
+* Then, you need reload all unit files to recongnize your new service:
+```
+sudo systemctl daemon-reload
+```
+
+* After all, you can start/stop the service:
+```
+sudo service Capybara_App start
+```
+* To show the status of service:
+```
+systemctl status Capybara_App.service
+```
+
+* To show the systemd journal
+```
+Or: journalctl -xe 
+
+Or: journalctl -f 
+```
+*Note*: the service will run continually, after the system is boot-up.
+
+
 `capybara` was written by `Jonathan Sarry <jonathan.sarry@edu.turkuamk.fi>`_.
