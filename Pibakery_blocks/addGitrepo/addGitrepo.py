@@ -42,9 +42,6 @@ def updateInfo():
     os.system("""sudo git commit -m "updating the ipaddress" """)
 
     # Pushing to Git with user.name and user.passwd
-    #try:
-    #os.system("sudo git push --repo http://"+sys.argv[5]+":"+sys.argv[6]+"@github.com/"+sys.argv[5]+"/"+sys.argv[2]+".git")
-    #except:
     os.system("sudo git push http://" + sys.argv[5] + ":" + sys.argv[6] + "@" + sys.argv[1])
     sys.exit(0)
     return
@@ -52,8 +49,6 @@ def updateInfo():
 #Cloning Git repository into the RPI
 def Cloning():
     # Clone Git repo to working directory
-   # subprocess.check_call(["git", "clone", sys.argv[1]])
-    #subprocess.check_call(["git", "clone", "http://", sys.argv[5],":",sys.argv[6],sys.argv[1]])
     os.system("git clone http://" + sys.argv[5] + ":" + sys.argv[6] + "@" + sys.argv[1])
     # Going to Git repo
     os.chdir(sys.argv[2])
