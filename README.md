@@ -46,8 +46,8 @@ This will allow us to modify our file in a windows environment and have it mappe
 
 Next we will need to add a to the provisioning script `after.sh` also found in the Homestead folder
 ```bash
-#python virtual environments
-sudo pip install virtualenvwrapper
+#python3 virtual environments
+sudo pip3 install virtualenvwrapper
 ```
 
 Finally we need to add an alias, luckily there's an `alias` file where all our environment aliases are stored
@@ -72,7 +72,7 @@ Starting the project
 After activating the virtualenv do the following
 
 ```
-pip install -r requirements.txt #or pip install --upgrade -r requirements.txt
+sudo pip3 install -r requirements.txt #or sudo pip3 install --upgrade -r requirements.txt
 ```
 
 
@@ -95,6 +95,12 @@ Using capybara
 
 * Going to the directory which you have cloned this project (.../capybara/), then:
 ```
+sudo pip3 install -r requirements.txt
+```
+
+* Then, install capybara app into system
+
+```
 sudo python3 setup.py install
 ```
 
@@ -102,6 +108,20 @@ sudo python3 setup.py install
 ```
 /usr/local/lib/python3.5/dist-packages/capybara...
 ```
+
+* Next, you need go to dir where you have installed Capybara app, then you need to copy example.config.yaml to be config.yaml:
+```
+sudo cp example.config.yaml config.yaml
+```
+
+* Next, you need to ***erase*** the value of **NAME** in config.yaml to create new Device. Example:
+```
+NAME: 
+PASSWORD: abc...xyz
+SECRET_KEY: abc...xyz
+
+```
+
 
 ### Installing unit file Capybara_App.service.
 * You need to copy unit file Capybara_App.service into systemd/system. Example path:
@@ -120,10 +140,16 @@ sudo chmod 775 Capybara_App.service
 sudo systemctl daemon-reload
 ```
 
+* Then, you need to enable Capybara_App.service service:
+```
+sudo systemctl enable Capybara_App.service 
+```
+
 * After all, you can start/stop the service:
 ```
 sudo service Capybara_App start
 ```
+
 * To show the status of service:
 ```
 systemctl status Capybara_App.service

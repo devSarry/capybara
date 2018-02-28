@@ -38,11 +38,11 @@ class Config:
 
     def write(self, key, value):
         try:
-            stream = open('config.yaml', 'r')
+            stream = open(self._configFilePath, 'r')
             data = yaml.load(stream)
             data[key] = value
 
-            with open('config.yaml', 'w') as yaml_file:
+            with open(self._configFilePath, 'w') as yaml_file:
                 yaml_file.write(yaml.dump(data, default_flow_style=False))
         except IOError as e:
             print('An IOError occurred. {}'.format(e.args[-1]))
