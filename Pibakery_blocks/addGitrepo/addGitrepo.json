@@ -5,22 +5,22 @@
     "args": [
         {
             "type": "text",
-            "default": "Github link git://your-git.git",
+            "default": "Git link ex: github.com/your_git/",
             "maxLength": 0
         },
         {
             "type": "text",
-            "default": "Folder's name in Git",
+            "default": "Folder's name in Git or Project name on Redmine",
             "maxLength": 0
         },
         {
             "type": "text",
-            "default": "User.Email to connect to Git",
+            "default": "User.Email for configuring",
             "maxLength": 0
         },
         {
             "type": "text",
-            "default": "User.Name to connect to Git",
+            "default": "User.Name for configuring",
             "maxLength": 0
         },
         {
@@ -32,11 +32,7 @@
             "type": "text",
             "default": "Git's passwd",
             "maxLength": 0
-        },
-        {
-			"type": "menu",
-			"options": ["pi", "root"]
-		}
+        }
     ],
 	"network": true,
 	"continue": true,
@@ -47,5 +43,5 @@
 		"raspbian-lite-pibakery.img"
 	],
 	"shortDescription":"Add Git repo.",
-	"longDescription":"Enter the Git repo and Folder's name on Git to sync, send or transfer the information from RPI without keyboard,screen"
+	"longDescription":"Enter the Git repo and Folder's name on Git to sync, send or transfer the information from RPI without keyboard,screen. Git link must be in correct form. github link should be: github.com/your_git/| Redmine link should be: Redmine_ip_address/git/your_project_name"
 }
