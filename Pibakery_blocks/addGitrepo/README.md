@@ -1,6 +1,6 @@
 # Building Energy project
 
-Files for configuring for RPI - for building energy project
+Files for configuring RPI - for building energy project
 12/2017
 	
 ## AddGitrepo	
@@ -21,8 +21,9 @@ This script would send the ip address of RPI to the specific Git repo and instal
 	- After everytime RPI is rebooted, this block shall get the IP address and push to the git repository.
 
 ## Required
-	- It must connect to the internet while running to setting up essentail packages and linking to Github
-	- It should be connected Internet by using Ethernet cable on the first time. (It might be failed if not)
+	- It must be connected Internet by using Ethernet cable on the first time. (It might be failed if not)
+	- It should connect to the internet while running to setting up essentail packages and linking to Github
+	
 
 ## Note: 	
 If you would like to import a folder to PiBakery, you can drap and drop. 
