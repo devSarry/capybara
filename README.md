@@ -93,9 +93,31 @@ Using capybara
 
 ### Installing python App (capybara) into the system to have absolute path.
 
+* Cloning Capybara repository into RPI
+```
+git clone https://github.com/dopyoman/capybara
+```
+
 * Going to the directory which you have cloned this project (.../capybara/), then:
 ```
 sudo pip3 install -r requirements.txt
+```
+
+* Next, you need to go to ~/capybara/app/ copy example.config.yaml to be config.yaml:
+```
+sudo cp example.config.yaml config.yaml
+```
+
+* Next, you need to ***erase*** the value of **NAME** in config.yaml if you want to create new Device. Example:
+```
+NAME: 
+PASSWORD: abc...xyz
+SECRET_KEY: abc...xyz
+```
+
+* Next, go back to ~/capybara
+```
+cd ..
 ```
 
 * Then, install capybara app into system
@@ -109,30 +131,16 @@ sudo python3 setup.py install
 /usr/local/lib/python3.5/dist-packages/capybara...
 ```
 
-* Next, you need go to dir where you have installed Capybara app, then you need to copy example.config.yaml to be config.yaml:
-```
-sudo cp example.config.yaml config.yaml
-```
-
-* Next, you need to ***erase*** the value of **NAME** in config.yaml to create new Device. Example:
-```
-NAME: 
-PASSWORD: abc...xyz
-SECRET_KEY: abc...xyz
-
-```
-
-
 ### Installing unit file Capybara_App.service.
-* You need to copy unit file Capybara_App.service into systemd/system. Example path:
+* You need to copy unit file Capybara_App.service into systemd/system. Example command:
 
 ```
-/etc/systemd/system/
+~/capybara $ sudo cp Capybara_App.service /etc/systemd/system/
 ```
 
-* After copying unit file into .../system, you need to give the permission to execute the unit file
+* After copying unit file into .../system, you need to give the permission to execute the unit file. Example command: 
 ```
-sudo chmod 775 Capybara_App.service
+sudo chmod 775 /etc/systemd/system/Capybara_App.service
 ```
 
 * Then, you need reload all unit files to recongnize your new service:
@@ -140,9 +148,14 @@ sudo chmod 775 Capybara_App.service
 sudo systemctl daemon-reload
 ```
 
-* Then, you need to enable Capybara_App.service service:
+* Next, you need to enable Capybara_App.service service:
 ```
 sudo systemctl enable Capybara_App.service 
+```
+
+* However, you need to reboot to enable RPI to read sensors
+```
+sudo reboot
 ```
 
 * After all, you can start/stop the service:
