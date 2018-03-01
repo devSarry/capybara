@@ -26,6 +26,8 @@ else:
             appendtext = "dtoverlay=w1-gpio,gpiopin={}\n".format(GPIO_list[i])
             sudoFile.write(appendtext)
 
+
+
 #Updating ip_address of RPI.
 def updateInfo():
     # Reading the IP address and send them to "ipAddress" file
