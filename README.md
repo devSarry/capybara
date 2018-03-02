@@ -182,7 +182,7 @@ Or: journalctl -f
 *Note*: the service will run continually, after the system is boot-up.
 
 ### Installing email service
-* To analyse and inform to the manager to know if the system is stopped unintended. *
+* To analyse and inform to the manager to know if the system is stopped unintended.
 
 * To Install email service. You can follow the instruction [here](http://www.raspberry-projects.com/pi/software_utilities/email/ssmtp-to-send-emails)
 
@@ -238,6 +238,11 @@ mpack -s "Test" /home/pi/some_folder/somefile.ext your_email_address@domain.com
 ```
 
 * Then, you need to specify the email address in handle_error.py 
+```
+Example: sudo nano /usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/handle_error.py 
+```
+
+* Then: 
 ```
 In line 7:
 os.system("""mpack -s "System got error" /home/pi/error_log.txt your_email_address@gmail.com""")
