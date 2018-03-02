@@ -4,7 +4,7 @@
 #multi-user.target - running on runlevel-3, start after the system is boot-up
 
 [Unit]
-Description=Embedded Capybara App to Systemd service
+Description=Capybara Systemd service - Building Energy Wifi
 After=multi-user.target
 
 [Service]
