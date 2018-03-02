@@ -225,7 +225,7 @@ sudo apt-get install -y mpack
 mpack -s "Test" /home/pi/some_folder/somefile.ext your_email_address@domain.com
 ```
 
-*** If you got the error while sending email, then you have to change the security setting in your email account. *** 
+***If you got the error while sending email, then you have to change the security setting in your email account.*** 
 
 * For example, if you are using Gmail, you can follow the instruction [here](https://stackoverflow.com/questions/38391412/raspberry-pi-send-mail-from-command-line-using-gmail-smtp-server)
 
