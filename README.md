@@ -181,7 +181,7 @@ Or: journalctl -f
 
 *Note*: the service will run continually, after the system is boot-up.
 
-### Install email service
+### Installing email service
 * To analyse and inform to the manager to know if the system is stopped unintended. *
 
 * To Install email service. You can follow the instruction [here](http://www.raspberry-projects.com/pi/software_utilities/email/ssmtp-to-send-emails)
