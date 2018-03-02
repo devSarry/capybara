@@ -106,6 +106,8 @@ sudo pip3 install -r requirements.txt
 * Next, you need to go to ~/capybara/app/ copy example.config.yaml to be config.yaml:
 ```
 sudo cp example.config.yaml config.yaml
+
+sudo nano config.yaml
 ```
 
 * Next, you need to ***erase*** the value of **NAME** in config.yaml if you want to create new Device. Example:
@@ -158,6 +160,8 @@ sudo systemctl enable Capybara_App.service
 sudo reboot
 ```
 
+*** Before start the service, you need to install the email service first ***
+
 * After all, you can start/stop the service:
 ```
 sudo service Capybara_App start
@@ -174,7 +178,70 @@ Or: journalctl -xe
 
 Or: journalctl -f 
 ```
+
 *Note*: the service will run continually, after the system is boot-up.
+
+### Install email service
+* To analyse and inform to the manager to know if the system is stopped unintended. *
+
+* To Install email service. You can follow the instruction [here](http://www.raspberry-projects.com/pi/software_utilities/email/ssmtp-to-send-emails)
+
+* Or follow the commands belows:
+```
+sudo apt-get install -y ssmtp
+sudo apt-get install -y mailutils
+``` 
+
+* Now edit the SSMTP configuration file:
+```
+sudo nano /etc/ssmtp/ssmtp.conf
+```
+
+* Then you need to include this and specify the information of your_email_account:
+```
+root=postmaster
+mailhub=smtp.gmail.com:587
+hostname=raspberrypi
+AuthUser=AGmailUserName@gmail.com
+AuthPass=TheGmailPassword
+FromLineOverride=YES
+UseSTARTTLS=YES
+```
+
+* Then, save and exit
+
+* Now, you can test the email service by using this:
+```
+echo "Hello world email body" | mail -s "Test Subject" your_email_address@domain.com
+```
+
+* Then, you need install *mpack* to send a file to email account:
+```
+sudo apt-get install -y mpack
+```
+
+* Now, you can test the service by using this:
+```
+mpack -s "Test" /home/pi/some_folder/somefile.ext your_email_address@domain.com
+```
+
+*** If you got the error while sending email, then you have to change the security setting in your email account. *** 
+
+* For example, if you are using Gmail, you can follow the instruction [here](https://stackoverflow.com/questions/38391412/raspberry-pi-send-mail-from-command-line-using-gmail-smtp-server)
+
+```
+1. Login to your gmail account
+2. Go to: Settings -> Accounts and Import -> Other Google Account settings
+3. Go to: Personal info & privacy -> Account overview
+3. Go to: Sign-in & security -> Connect apps & sites
+4. Set option Allow less secure apps to ON (on the bottom of page Sign-in & security)
+```
+
+* Then, you need to specify the email address in handle_error.py 
+```
+In line 7:
+os.system("""mpack -s "System got error" /home/pi/error_log.txt your_email_address@gmail.com""")
+```
 
 
 `capybara` was written by `Jonathan Sarry <jonathan.sarry@edu.turkuamk.fi>`_.
