@@ -1,16 +1,16 @@
 {
 	"name": "addGitrepo",
-	"text": "Add Git repo for RPI \\nGit link: %1\\nGit's folder: %2\\nUser.Email: %3\\nUser.Name: %4\\nGit's User Name: %5\\nGit'passwd: %6\\nUser: %7",
+	"text": "Add Git repo for RPI \\nGit link: %1\\nGit's repo: %2\\nUser.Email: %3\\nUser.Name: %4\\nGit's User Name: %5\\nGit'passwd: %6\\nUser: %7",
 	"script": "addGitrepo.py",
     "args": [
         {
             "type": "text",
-            "default": "Git link ex: github.com/your_git/",
+            "default": "xx.xx.xxx/git/your_project or github.com/your_git/...",
             "maxLength": 0
         },
         {
             "type": "text",
-            "default": "Folder's name in Git or Project name on Redmine",
+            "default": "your_project_name or git_repository",
             "maxLength": 0
         },
         {
@@ -30,7 +30,7 @@
         },
         {
             "type": "text",
-            "default": "Git's passwd",
+            "default": "Git's password",
             "maxLength": 0
         }
     ],

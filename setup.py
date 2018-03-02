@@ -10,7 +10,7 @@ setup(
 
     #Include .yaml file in app dir
     package_data={
-        'app': ['*.yaml']
+        'app': ['*.yaml','handle_error.py']
     },
 
     #Information
