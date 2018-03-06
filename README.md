@@ -249,7 +249,7 @@ After setup:
 Example: sudo nano /usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/handle_error.py 
 ```
 
-* Then: 
+* In handle_error.py file: 
 ```
 In line 7:
 os.system("""mpack -s "System got error" /home/pi/error_log.txt your_email_address@gmail.com""")
