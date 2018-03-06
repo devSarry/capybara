@@ -245,7 +245,7 @@ Before setup:
 Example: sudo nano ~/capybara/app/handle_error.py 
 ```
 ```
-After setup:
+Or after setup:
 Example: sudo nano /usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/handle_error.py 
 ```
 
