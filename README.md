@@ -123,7 +123,7 @@ SECRET_KEY: abc...xyz
 cd ..
 ```
 
-***Before using setup.py to install Capybara application into system, you should intall and modify email information first [here](###Installing-email-service)***
+***Before using setup.py to install Capybara application into system, you should intall and modify email information first [here](#installing-email-service)***
 * Then, install capybara app into system
 
 ```
