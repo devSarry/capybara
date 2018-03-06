@@ -122,6 +122,7 @@ SECRET_KEY: abc...xyz
 cd ..
 ```
 
+***Before using setup.py to install Capybara application into system, you should intall and modify email information first [here](#-Installing-email-service)***
 * Then, install capybara app into system
 
 ```
@@ -160,7 +161,7 @@ sudo systemctl enable Capybara_App.service
 sudo reboot
 ```
 
-***Before start the service, you need to install the email service first***
+***Before start the service, you should install the email service first***
 
 * After all, you can start/stop the service:
 ```
