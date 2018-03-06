@@ -241,6 +241,11 @@ mpack -s "Test" /home/pi/some_folder/somefile.ext your_email_address@domain.com
 
 * Then, you need to specify the email address in handle_error.py 
 ```
+Before setup:
+Example: sudo nano ~/capybara/app/handle_error.py 
+```
+```
+After setup:
 Example: sudo nano /usr/local/lib/python3.5/dist-packages/capybara-0.1-py3.5.egg/app/handle_error.py 
 ```
 
